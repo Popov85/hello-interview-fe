@@ -1,0 +1,41 @@
+body {
+  background-color: #fff9c4; /* Light yellow */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-content: center;
+}
+
+button:hover {
+  background-color: darkgray;
+}
+
+button:disabled {
+  background-color: #b0b0b0; /* Gray */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.loading {
+  text-align: center;
+  font-weight: bold;
+  color: darkgray;
+  margin-bottom: 10px;
+}
+.errorText {
+  text-align: center;
+  color: red;
+  margin-top: 10px;
+}
