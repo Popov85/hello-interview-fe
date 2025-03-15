@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit"
 import rtkReducer from "./reducers/rtkReducer.ts";
 import {phonesApi} from "../apps/phones/api/phonesAPI.ts";
+import phoneReducer from "./reducers/phoneReducer.ts";
 
 export const store = configureStore({
     reducer: {
         [phonesApi.reducerPath]: phonesApi.reducer,
         rtkReducer: rtkReducer, // Define your slices here
+        phoneReducer: phoneReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(phonesApi.middleware),

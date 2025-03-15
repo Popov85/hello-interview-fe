@@ -1,20 +1,39 @@
 .phoneListContainer {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    justify-content: space-between; /* Center horizontally */
     gap: 10px; /* Spacing between items */
-    padding: 10px;
+    padding: 10px 0;
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap; /* Prevent items from wrapping */
-    width: 100%; /* Ensure full width */
+    width: 90%; /* Ensure full width */
+    margin: auto; /* ✅ Center the entire container */
 }
 
 .phoneItem {
     background-color: gray;
     color: white;
-    padding: 3px;
+    padding: 5px;
     border-radius: 5px;
-    text-align: center;
-    min-width: 100px; /* Ensures readable width */
+    text-align: left;
+    width: fit-content; /* ✅ Width matches text length */
+    font-size: clamp(12px, 3vw, 16px);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* ✅ Responsive: Tablet & Mobile (Vertical Layout) */
+@media (max-width: 600px) {
+    .phoneListContainer {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        justify-content: flex-start; /* Align to top */
+        overflow-x: visible; /* Remove horizontal scroll */
+    }
+
+    .phoneItem {
+        width: auto; /* Adapt to content */
+        max-width: 100%; /* Prevent overflow */
+        text-align: center; /* Optional: Center text */
+    }
 }

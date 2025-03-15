@@ -4,7 +4,7 @@ import styles from "./PhoneDetail.module.css";
 import {useDeletePhoneMutation} from "./api/phonesAPI.ts";
 
 type Props = {
-    phone: Phone;
+    phone: Phone | null;
     cancel: ()=>void;
     edit: () => void;
 };
@@ -14,6 +14,8 @@ const PhoneDetail: React.FC<Props> = ({phone, cancel, edit}: Props) => {
     //console.log("PhoneDetail", phone);
 
     const [deletePhone, { isLoading, isError }] = useDeletePhoneMutation(); // ✅ Use mutation hook
+
+    if (!phone) return null;
 
     const handleDelete = (id: number) => {
         deletePhone(id);

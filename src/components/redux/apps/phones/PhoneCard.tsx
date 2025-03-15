@@ -2,25 +2,26 @@ import React, {useState} from "react";
 import {Phone} from "./types/Phone.ts";
 import PhoneDetail from "./PhoneDetail.tsx";
 import PhoneForm from "./forms/PhoneForm.tsx";
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "../../store/store.ts";
+import {resetPhone, setPhone} from "../../store/reducers/phoneReducer.ts";
 
-type Props = {
-    phone: Phone;
-    cancel: ()=>void;
-};
-
-const PhoneCard: React.FC<Props> = ({phone, cancel}: Props) => {
+const PhoneCard: React.FC = () => {
 
     //console.log("PhoneCard", phone);
 
     const [editMode, setEditMode] = useState(false);
 
-    const [currentPhone, setCurrentPhone] = useState<Phone>(phone);
+    const dispatch: AppDispatch = useDispatch<AppDispatch>();
 
-    //console.log("Edit mode = ", editMode);
+    const selectedPhone: Phone | null = useSelector((state: RootState) => state.phoneReducer.phone);
 
-    if (editMode) return <PhoneForm phone={phone} quit = {()=>setEditMode(false)} setPhone={(p)=>setCurrentPhone(p)}/>;
+    if (!selectedPhone) return null;
 
-    return <PhoneDetail phone={currentPhone} cancel={cancel} edit={() => setEditMode(!editMode)}/>;
+    if (editMode && selectedPhone!==null)
+        return <PhoneForm phone={selectedPhone} quit = {()=>setEditMode(false)} setPhone={(p)=>dispatch(setPhone(p))}/>;
+
+    return <PhoneDetail phone={selectedPhone} cancel={()=>dispatch(resetPhone())} edit={() => setEditMode(!editMode)}/>;
 };
 
 export default PhoneCard;
