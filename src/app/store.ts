@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit"
-import rtkReducer from "./reducers/rtkReducer.ts";
-import {phonesApi} from "../apps/phones/api/phonesAPI.ts";
-import phoneReducer from "./reducers/phoneReducer.ts";
+import rtkReducer from "../components/redux/apps/experiment/rtkReducer.ts";
+import {phonesApi} from "../features/phones/api/phonesAPI.ts";
+import phoneReducer from "../features/phones/reducers/phoneReducer.ts";
 
 export const store = configureStore({
     reducer: {

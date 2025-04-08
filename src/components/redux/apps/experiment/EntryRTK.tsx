@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
-import {RootState} from "../../store/store.ts";
-import {decrement, increment, setName, setValue} from "../../store/reducers/rtkReducer.ts";
+import {RootState} from "../../../../app/store.ts";
+import {decrement, increment, setName, setValue} from "./rtkReducer.ts";
 import {FC} from "react";
 import {ChildRTK} from "./ChildRTK.tsx";
 

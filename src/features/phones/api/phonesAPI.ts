@@ -1,5 +1,5 @@
 import { createApi} from "@reduxjs/toolkit/query/react";
-import {Phone, PhonesResponse} from "../types/Phone.ts";
+import {Phone, PhonesResponse} from "../../../types/Phone.ts";
 import {baseQuery} from "./baseQuery.ts";
 
 export const phonesApi = createApi({

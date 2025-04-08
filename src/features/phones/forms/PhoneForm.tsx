@@ -1,6 +1,6 @@
 import React from "react";
 import {useForm} from "react-hook-form";
-import {Phone} from "../types/Phone.ts";
+import {Phone} from "../../../types/Phone.ts";
 import styles from "./PhoneForm.module.css";
 import {useSavePhoneMutation} from "../api/phonesAPI.ts";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import {Phone} from "./types/Phone.ts";
+import {Phone} from "../../../types/Phone.ts";
 import styles from "./PhoneDetail.module.css";
-import {useDeletePhoneMutation} from "./api/phonesAPI.ts";
+import {useDeletePhoneMutation} from "../api/phonesAPI.ts";
 
 type Props = {
     phone: Phone | null;

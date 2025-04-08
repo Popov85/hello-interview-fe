@@ -1,9 +1,9 @@
-import {Phone} from "./types/Phone.ts";
+import {Phone} from "../../../types/Phone.ts";
 import styles from "./PhonesList.module.css";
 import {FC} from "react";
 import {useDispatch} from "react-redux";
-import {setPhone} from "../../store/reducers/phoneReducer.ts";
-import {AppDispatch} from "../../store/store.ts";
+import {setPhone} from "../reducers/phoneReducer.ts";
+import {AppDispatch} from "../../../app/store.ts";
 
 type Props = {
     content?: Phone[]

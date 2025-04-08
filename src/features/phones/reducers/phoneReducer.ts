@@ -1,6 +1,6 @@
 // features/someSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import {Phone} from "../../apps/phones/types/Phone.ts";
+import {Phone} from "../../../types/Phone.ts";
 
 // Define the state type
 interface PhoneState {

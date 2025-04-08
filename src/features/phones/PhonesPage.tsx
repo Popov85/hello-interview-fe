@@ -1,13 +1,13 @@
 import {FC, useState} from "react";
 import {useGetPhonesQuery} from "./api/phonesAPI.ts";
-import {PhonesList} from "./PhonesList.tsx";
-import {Pagination} from "./Pagination.tsx";
-import styles from "./Application.module.css";
-import PhoneCard from "./PhoneCard.tsx";
+import {PhonesList} from "./components/PhonesList.tsx";
+import {Pagination} from "./components/Pagination.tsx";
+import styles from "./PhonesPage.module.css";
+import PhoneCard from "./components/PhoneCard.tsx";
 
-export const Application: FC = () => {
+export const PhonesPage: FC = () => {
 
-    //console.log("Application");
+    //console.log("PhonesPage");
 
     const [page, setPage] = useState(0);
 

@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import {Phone} from "./types/Phone.ts";
+import {Phone} from "../../../types/Phone.ts";
 import PhoneDetail from "./PhoneDetail.tsx";
-import PhoneForm from "./forms/PhoneForm.tsx";
+import PhoneForm from "../forms/PhoneForm.tsx";
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "../../store/store.ts";
-import {resetPhone, setPhone} from "../../store/reducers/phoneReducer.ts";
+import {AppDispatch, RootState} from "../../../app/store.ts";
+import {resetPhone, setPhone} from "../reducers/phoneReducer.ts";
 
 const PhoneCard: React.FC = () => {
 
