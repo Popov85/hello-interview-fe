@@ -1,3 +1,5 @@
+import {Page} from "./Page.ts";
+
 export type Phone = {
     id: number | null;
     brand: string;
@@ -6,10 +8,4 @@ export type Phone = {
     specification: Map<string, never>;
 }
 
-export type PhonesResponse = {
-    content: Phone[];
-    totalPages: number;
-    totalElements: number;
-    size: number;
-    number: number;
-}
+export type PhonesResponse = Page<Phone>;
