@@ -12,7 +12,7 @@ export const PhonesList: FC<Props> = ({content}: Props) => {
 
     const dispatch : AppDispatch = useDispatch<AppDispatch>();
 
-    if (!content || content.length==0) return null;
+    if (!content?.length) return null;
 
     return (
         <div className={styles.phoneListContainer}>

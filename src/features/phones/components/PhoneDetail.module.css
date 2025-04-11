@@ -12,6 +12,12 @@
     justify-content: center;
     text-align: center; /* Center the text inside */
     margin: 20px auto; /* Ensures horizontal centering */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detailContainer:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Improve header styling */

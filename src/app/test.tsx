@@ -1,5 +1,5 @@
 import {createRoot} from 'react-dom/client'
-import '../app/index.css'
+import './index.css'
 import {StrictMode} from "react";
 import CounterComponent from "../components/hooks/CounterComponent.tsx";
 
