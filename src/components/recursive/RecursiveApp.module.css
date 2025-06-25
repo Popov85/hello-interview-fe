@@ -1,0 +1,16 @@
+
+.commentsList {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+
+.commentItem {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.commentText {
+    margin: 0;
+}
