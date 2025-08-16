@@ -1,7 +1,7 @@
 import {createRoot} from 'react-dom/client'
 import './index.css'
 import {StrictMode} from "react";
-import RecursiveApp from "../components/recursive/RecursiveApp.tsx";
+import LoginPage from "../components/login/LoginPage.tsx";
 
 const isDev = import.meta.env.MODE === "development";
 
@@ -29,5 +29,5 @@ const markList = [
 
 
 createRoot(document.getElementById("root")!).render(
-    isDev ? <RecursiveApp/> : <StrictMode><RecursiveApp/></StrictMode>
+    isDev ? <LoginPage/> : <StrictMode><LoginPage/></StrictMode>
 );

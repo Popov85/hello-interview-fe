@@ -1,0 +1,94 @@
+/*I used rem here because it makes the padding scale consistently with the root font size,
+which improves accessibility and keeps spacing proportional i
+f the user changes zoom or has a larger base font size set in their browser.
+rem → “root em” = relative to the root (<html>) font size.
+If the root font size is the browser default (16px), 1.5rem = 24px.
+If a user increases their default font size to 20px for better readability,
+1.5rem automatically becomes 30px — so the form feels proportionally larger.
+When a user zooms to 120% in the browser, two things can happen depending on the browser and settings — but in all modern browsers, the effect for rem is:
+Zoom increases the root font size proportionally.
+So 1rem now = 16px × 1.2 = 19.2px.
+Any spacing set in rem (like padding: 1.5rem) will scale:
+Before zoom → 1.5 × 16 = 24px
+At 120% zoom → 1.5 × 19.2 = 28.8px
+*/
+
+
+
+/* Centers the form both horizontally and vertically within the viewport */
+.wrapper {
+    display: flex;               /* enables flexbox for easy centering */
+    justify-content: center;     /* centers horizontally: main-axis-align: center;  */
+    align-items: center;         /* centers vertically: cross-axis-align: center;*/
+    min-height: 100vh;           /* ensures wrapper is full viewport height: By default, your .wrapper only has as much height as its content — so there’s no extra vertical space for align-items: center to work with. */
+}
+
+/* Main form styling */
+.form {
+    width: 100%;                 /* make form stretch to container width */
+    max-width: 500px;            /* limit form's max width for readability */
+    padding: 1.5rem;             /* space inside form border */
+    border: 1px solid #ccc;      /* light gray border for definition */
+    border-radius: 6px;          /* rounded corners for softer look */
+    background-color: #fafafa;   /* subtle light background for contrast */
+}
+
+/* Group of fields inside the form */
+.form fieldset {
+    /*border: 0;*/                   /* remove default fieldset border */
+    /*padding: 0;*/                  /* remove default padding */
+    /*margin: 0;*/                   /* remove default margin */
+    display: flex;               /* stack inputs neatly using flexbox */
+    flex-direction: column;      /* place elements vertically */
+    /*justify-content: center;*/     /* vertically center content (if tall) */
+    gap: 1rem;                   /* equal vertical space between children */
+}
+
+/* Fieldset title styling */
+.form legend {
+    font-size: 1.25rem;          /* slightly larger text for emphasis */
+    font-weight: bold;           /* make it stand out */
+    margin-bottom: 1rem;         /* space below legend before fields start */
+}
+
+/* Label styling */
+.form label {
+    display: block;              /* make label occupy full line */
+    font-weight: 500;            /* medium weight for readability */
+    margin-bottom: 0.3rem;       /* small space between label and input */
+}
+
+/* Input field styling */
+.form input {
+    width: 100%;                 /* fill the container width */
+    padding: 0.5rem;             /* space inside input for text */
+    font-size: 1rem;             /* readable text size */
+    border: 1px solid #bbb;      /* subtle border color */
+    border-radius: 4px;          /* slightly rounded corners */
+}
+
+/* Improve default browser-specific highlights*/
+.form input:focus {
+    outline: none;                                /* remove browser default */
+    border-color: #0066cc;                        /* your brand color */
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.3); /* soft glow for accessibility */
+}
+
+/* Submit button styling */
+.form button {
+    width: 50%;                  /* make button full width of form */
+    padding: 0.5rem;             /* comfortable click/tap area */
+    margin: 0 auto;              /* centers block element horizontally */
+    font-size: 1rem;             /* readable button text */
+    background-color: #737373;   /* neutral dark gray background */
+    /*border: none;*/            /* remove default button border */
+    border-radius: 4px;          /* match input corner radius */
+    cursor: pointer;             /* show pointer cursor on hover */
+
+}
+
+/* Disabled button state */
+.form button:disabled {
+    background-color: #ccc;      /* lighter background to indicate disabled */
+    cursor: not-allowed;         /* visual cue that button can’t be clicked */
+}

@@ -7,7 +7,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-button {
+/*button {
   padding: 8px 16px;
   margin: 5px;
   font-size: 14px;
@@ -24,11 +24,11 @@ button {
   }
 
   &:disabled {
-    background-color: #b0b0b0; /* Gray */
+    background-color: #b0b0b0;
     cursor: not-allowed;
     opacity: 0.7;
   }
-}
+}*/
 .loading {
   text-align: center;
   font-weight: bold;
